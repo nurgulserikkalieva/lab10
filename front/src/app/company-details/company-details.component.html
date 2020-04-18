@@ -1,0 +1,9 @@
+<h1>{{company.name}}</h1>
+<div class = "info">
+    <p><strong>Company Description:</strong> {{company.description}}</p>
+    <p><strong>City: </strong> {{company.city}}</p>
+    <p><strong>Address: </strong> {{company.address}}</p>
+    <a routerLink="/companies/:{{id}}/vacancies">View vacancies</a>
+</div>
+
+<button (click) = "delete(id)" style="margin-top: 10px;">Delete this company</button>

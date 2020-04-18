@@ -1,0 +1,35 @@
+<h1 class="header">Vacancies</h1>
+<table border="1">
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>description</th>
+        <th>salary</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of vacancies" style="text-align: center;">
+        <td>{{v.id}}</td>
+        <td>{{v.name}}</td>
+        <td>{{v.description}}</td>
+        <td>{{v.salary}}</td>
+        <td><a routerLink="/vacancies/:{{v.id}}">More</a></td>
+        <td><button (click) = "deleteVacancy(v)">Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Add new Vacancy</h3>
+<form>
+    <label for = "nameInput">Name: </label>
+    <input [(ngModel)] = "name" type = "text" placeholder = "name" name = "nameInput" required>
+    <label for = "descriptionInput">Description: </label>
+    <input [(ngModel)]="description" type = "text" placeholder="description" name = "desciptoinInput" required>
+    <label for = "salaryInput">Salary: </label>
+    <input [(ngModel)]="salary" type = "number" placeholder = "salary" name = "salaryInput" required>
+    <button (click) = "addVacancy()" style="margin-left:10px ;">Add</button>
+</form>
+
+<button routerLink="">
+  Back
+</button>
+
